@@ -20,19 +20,13 @@
 
 #define MISGERET_NUMPIXELS      221
 #define SMALL_KANAF_NUMPIXELS      59
-
 #define BIG_KANAF_NUMPIXELS      46
 
-
-// kanaf1 + 2  Misgeret = 121 leds --> PIN 2 --> A & B
-// kanaf_top_left PIN 4
-
-// When we setup the NeoPixel library, we tell it how many pixels, and which pin to use to send signals.
-// Note that for older NeoPixel strips you might need to change the third parameter--see the strandtest
-// example for more information on possible values.
-Adafruit_NeoPixel MISGERET_PIXELS = Adafruit_NeoPixel(MISGERET_NUMPIXELS, MISGERET_PIN, NEO_GRB + NEO_KHZ800);
-Adafruit_NeoPixel SMALL_KANAF_PIXELS = Adafruit_NeoPixel(SMALL_KANAF_NUMPIXELS, SMALL_KANAF_TOP_LEFT_PIN, NEO_GRB + NEO_KHZ800);
-Adafruit_NeoPixel BIG_KANAF_PIXELS = Adafruit_NeoPixel(BIG_KANAF_NUMPIXELS, SMALL_KANAF_BOTTOM_RIGHT, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel misgeret_strip = Adafruit_NeoPixel(MISGERET_NUMPIXELS, MISGERET_PIN, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel top_left_strip = Adafruit_NeoPixel(SMALL_KANAF_NUMPIXELS, SMALL_KANAF_TOP_LEFT_PIN, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel top_right_strip = Adafruit_NeoPixel(SMALL_KANAF_NUMPIXELS, SMALL_KANAF_TOP_RIGHT_PIN, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel bottom_left_strip = Adafruit_NeoPixel(BIG_KANAF_NUMPIXELS, SMALL_KANAF_BOTTOM_LEFT, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel bottom_right_strip = Adafruit_NeoPixel(BIG_KANAF_NUMPIXELS, SMALL_KANAF_BOTTOM_RIGHT, NEO_GRB + NEO_KHZ800);
 
 
 int delayval = 10; // delay for half a second
